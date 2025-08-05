@@ -7,7 +7,7 @@ import { useEffect } from "react";
 
 const Placeorder = () => {
   const { getTotalCartAmount, token,food_list,cartItems } = useContext(StoreContext);
-  const url = "http://localhost:4000"
+  const url = "https://foody-backend-bua3.onrender.com"
   
   const[data,setData] = useState({
     firstName:"",
