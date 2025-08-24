@@ -44,15 +44,18 @@ I have configured all that
 🤝 Contributing
 ```bash
 
-Fork the repo
+First git clone, then after you change any code ,,,
 
-Create a feature branch (git checkout -b feature-name)
+git checkout dev (in vs code)
 
-Commit changes (git commit -m "Added feature")
+git add . (to save all changes)
 
-Push to branch (git push origin feature-name)
+git commit -m 'message'  (To commit)
 
-Open a Pull Request
+git push origin dev (To push your code)
+
+After that i will create and merge the pull request
+
 ```
 📜 License
 ```bash
