@@ -4,6 +4,7 @@
     gap: 24px;
     text-align: center;
     padding: 40px 20px;
+    
 }
 
 .Exploremenu h1 {
@@ -30,7 +31,6 @@
     gap: clamp(16px, 3vw, 40px);
     text-align: center;
     margin: 30px 0;
-    overflow-x: auto;
     padding-bottom: 10px;
     scroll-behavior: smooth;
 }
