@@ -69,6 +69,13 @@ const Navbar = ({ setShowlogin }) => {
         >
           Contact Us
         </a>
+        <Link
+          to="/developers"
+          onClick={() => handleMenuClick("developers")}
+          className={menu === "developers" ? "active" : ""} 
+        >
+          Developers
+        </Link>
 
         {/* Right section inside mobile menu */}
         <div className="navbar-right mobile-only">
@@ -124,4 +131,3 @@ const Navbar = ({ setShowlogin }) => {
 };
 
 export default Navbar;
-

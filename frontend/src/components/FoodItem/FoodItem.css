@@ -89,8 +89,7 @@
 .food-item-img-container .add:hover {
     background: #e63946;
     transform: scale(1.15) rotate(10deg);
-    filter: brightness(100) invert(1);
-    box-shadow: 0 6px 18px rgba(230, 57, 70, 0.4);
+    
 }
 
 /* Counter */
