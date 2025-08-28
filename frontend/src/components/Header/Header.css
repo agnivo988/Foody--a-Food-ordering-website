@@ -1,8 +1,8 @@
 /* 🌟 Full-Screen Header (Zomato Style) */
 .header {
-    height: 100vh; /* Full screen */
-    width: 100%;
-    background: url('../../../public/image.png') no-repeat center center;
+    height: 100vh; /* Full screen height */
+    width: 100%;   /* Full width */
+    background: url('../../../image.png') no-repeat center center;
     background-size: cover; /* Always cover full screen */
     position: relative;
     margin: 0;
@@ -10,12 +10,12 @@
     overflow: hidden;
 }
 
-/* Dark overlay (like Zomato) */
+/* Dark overlay */
 .header::after {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.5); /* Dark transparent overlay */
+    background: rgba(0, 0, 0, 0.5); 
     z-index: 1;
 }
 
@@ -24,34 +24,33 @@
     position: relative;
     z-index: 2;
     height: 100%;
+    width: 100%;             /* ensure content spans full width */
     display: flex;
     flex-direction: column;
-    justify-content: center; /* center vertically */
-    align-items: center;     /* center horizontally */
+    justify-content: center; 
+    align-items: center;     
     text-align: center;
     padding: 0 20px;
     color: #fff;
 }
+
 /* Import Metropolis font */
 @import url('https://fonts.googleapis.com/css2?family=Metropolis:wght@700;900&display=swap');
 
-/* Apply to your heading */
+/* Heading 1 (Big, Bold) */
 .headercontents h1 {
-  font-family: 'Metropolis', sans-serif;
-  font-weight: 900;       /* heavy, bold look */
-  font-size: clamp(48px, 8vw, 80px);
-  color: #fdfafa;          /* Zomato red */
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  text-align: center;
+    font-family: 'Metropolis', sans-serif;
+    font-weight: 900;
+    font-size: clamp(36px, 7vw, 80px); /* responsive scaling */
+    color: #fdfafa;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
 }
 
-
-
-
-/* Heading (big bold like Zomato) */
+/* Heading 2 (subheading) */
 .headercontents h2 {
-    font-size: clamp(32px, 6vw, 60px);
+    font-size: clamp(24px, 5vw, 60px);
     font-weight: 700;
     line-height: 1.2;
     margin-bottom: 20px;
@@ -60,10 +59,10 @@
 
 /* Subtext */
 .headercontents p {
-    font-size: clamp(14px, 2vw, 22px);
+    font-size: clamp(14px, 2.5vw, 20px);
     margin-bottom: 30px;
     color: rgba(255, 255, 255, 0.9);
-    max-width: 600px;
+    max-width: 700px;
 }
 
 /* 🌟 Button */
@@ -74,26 +73,40 @@
     border: none;
     border-radius: 30px;
     cursor: pointer;
-    background-color: #ff4b2b; /* Zomato-like red */
+    background-color: #ff4b2b;
     color: #fff;
     transition: all 0.3s ease;
 }
 
-/* Hover effect */
 .headercontents button:hover {
     background-color: #e8431f;
     transform: scale(1.05);
 }
 
-/* 📱 Responsive */
+/* 📱 Responsive Tweaks */
 @media (max-width: 768px) {
-    .headercontents h2 {
-        font-size: 28px;
+    .header {
+        height: 100vh; /* still take full height on mobile */
+        background-position: center;
     }
+
+    .headercontents {
+        padding: 0 10px; /* less padding on small screens */
+    }
+
+    .headercontents h1 {
+        font-size: clamp(28px, 9vw, 48px);
+    }
+
+    .headercontents h2 {
+        font-size: clamp(20px, 7vw, 32px);
+    }
+
     .headercontents p {
         font-size: 14px;
         margin-bottom: 20px;
     }
+
     .headercontents button {
         padding: 10px 24px;
         font-size: 14px;

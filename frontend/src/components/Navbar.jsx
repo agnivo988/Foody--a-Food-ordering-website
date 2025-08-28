@@ -17,60 +17,111 @@ const Navbar = ({ setShowlogin }) => {
     navigate("/");
   };
 
+  const handleMenuClick = (value) => {
+    setMenu(value);
+    setIsOpen(false); // close menu after clicking
+  };
+
   return (
     <div className={`navbar ${isOpen ? "open" : ""}`}>
-      {/* Logo (can replace img with <h1>FOODY</h1> if you want text style) */}
+      {/* Logo */}
       <Link to="/" className="logo">
-       <h1 className="logo">🍴 FOODY</h1>
-
-
+        <h1 className="logo">🍴 FOODY</h1>
       </Link>
 
       {/* Hamburger */}
-      <div className="hamburger" onClick={() => setIsOpen(!isOpen)}>
+      <div
+        className={`hamburger ${isOpen ? "active" : ""}`}
+        onClick={() => setIsOpen(!isOpen)}
+      >
         <span></span>
         <span></span>
         <span></span>
       </div>
 
-      {/* Menu */}
-      <ul className="navbar-menu">
-        <Link to="/" onClick={() => setMenu("home")} className={menu === "home" ? "active" : ""}>Home</Link>
-        <a href="#food-display" onClick={() => setMenu("menu")} className={menu === "menu" ? "active" : ""}>Menu</a>
-        <a href="#app-download" onClick={() => setMenu("mobile-app")} className={menu === "mobile-app" ? "active" : ""}>Mobile App</a>
-        <a href="#footer" onClick={() => setMenu("contact-us")} className={menu === "contact-us" ? "active" : ""}>Contact Us</a>
-      </ul>
+      {/* Slide-in Menu */}
+      <ul className={`navbar-menu ${isOpen ? "show" : ""}`}>
+        <Link
+          to="/"
+          onClick={() => handleMenuClick("home")}
+          className={menu === "home" ? "active" : ""}
+        >
+          Home
+        </Link>
+        <a
+          href="#food-display"
+          onClick={() => handleMenuClick("menu")}
+          className={menu === "menu" ? "active" : ""}
+        >
+          Menu
+        </a>
+        <a
+          href="#app-download"
+          onClick={() => handleMenuClick("mobile-app")}
+          className={menu === "mobile-app" ? "active" : ""}
+        >
+          Mobile App
+        </a>
+        <a
+          href="#footer"
+          onClick={() => handleMenuClick("contact-us")}
+          className={menu === "contact-us" ? "active" : ""}
+        >
+          Contact Us
+        </a>
 
-      {/* Right side */}
-      <div className="navbar-right">
-        <img src={assets.search_icon} alt="" />
-        <div className="navbar-search-icon">
-          <Link to="/cart">
-            <img src={assets.basket_icon} alt="" />
-          </Link>
-          <div className={getTotalCartAmount() === 0 ? "" : "dot"}></div>
-        </div>
-        <div>
-          {!token ? (
-            <button onClick={() => setShowlogin(true)}>Sign in</button>
-          ) : (
-            <div className="navbar-profile">
-              <img src={assets.profile_icon} alt="" />
-              <ul className="nav-profile-dropdown">
-                <li onClick={() => navigate("/myorders")}>
-                  <img src={assets.bag_icon} alt="" /> <p>Orders</p>
-                </li>
-                <hr />
-                <li onClick={logout}>
-                  <img src={assets.logout_icon} alt="" /> <p>Logout</p>
-                </li>
-              </ul>
+        {/* Right section inside mobile menu */}
+        <div className="navbar-right mobile-only">
+          <img src={assets.search_icon} alt="search" />
+          <div className="navbar-search-icon">
+            <Link to="/cart" onClick={() => setIsOpen(false)}>
+              <img src={assets.basket_icon} alt="cart" />
+            </Link>
+            <div className={getTotalCartAmount() === 0 ? "" : "dot"}></div>
+            <div className="cart-count">
+              {getTotalCartAmount() > 0 && <span>{getTotalCartAmount()}</span>}
             </div>
-          )}
+          </div>
+          <div>
+            {!token ? (
+              <button
+                onClick={() => {
+                  setShowlogin(true);
+                  setIsOpen(false);
+                }}
+              >
+                Sign in
+              </button>
+            ) : (
+              <div className="navbar-profile">
+                <img src={assets.profile_icon} alt="profile" />
+                <ul className="nav-profile-dropdown">
+                  <li
+                    onClick={() => {
+                      navigate("/myorders");
+                      setIsOpen(false);
+                    }}
+                  >
+                    <img src={assets.bag_icon} alt="orders" /> <p>Orders</p>
+                  </li>
+                  <hr />
+                  <li
+                    onClick={() => {
+                      logout();
+                      setIsOpen(false);
+                    }}
+                  >
+                    <img src={assets.logout_icon} alt="logout" /> <p>Logout</p>
+                  </li>
+                </ul>
+              </div>
+            )}
+          </div>
         </div>
-      </div>
+      </ul>
     </div>
   );
 };
 
 export default Navbar;
+
