@@ -1,144 +1,183 @@
-.navbar{
-    padding: 20px 0px;
+/* Navbar Base */
+.navbar {
+    width: 100%;
+    padding: 15px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
-.navbar .logo{
-    width: 150px;
+/* Stylish Logo */
+.navbar .logo {
+    font-family: 'Poppins', sans-serif;
+    font-size: 32px; /* Bigger and prominent */
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    /* Gradient text */
+    background: linear-gradient(135deg, #ff6347, #ff4500); /* Tomato → Orange-Red */
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    /* Shadow/glow */
+    text-shadow: 0 2px 6px rgba(255, 99, 71, 0.5);
+
+    /* Smooth hover animation */
+    transition: transform 0.3s ease, text-shadow 0.3s ease;
 }
-.navbar-menu{
-     display: flex;
-     list-style: none;
-     gap: 20px;
-     color: #49557e;
-     font-size: 18px;
+
+.navbar .logo:hover {
+    transform: scale(1.1) rotate(-2deg); /* Slight pop & tilt */
+    text-shadow: 0 4px 12px rgba(255, 99, 71, 0.7); /* Stronger glow */
 }
-.navbar-right{
+
+/* Menu Styling - Elegant & Aristocratic */
+.navbar-menu {
+    display: flex;
+    list-style: none;
+    gap: 30px; /* Wider gap for elegance */
+    font-size: 16px;
+    font-weight: 600; /* Premium weight */
+    letter-spacing: 1px;
+    color: #333; /* Dark muted text */
+    transition: all 0.3s ease;
+}
+
+.navbar-menu a {
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+    padding: 5px 0;
+    transition: all 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+}
+
+.navbar-menu a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -3px;
+    transform: translateX(-50%);
+    width: 0%;
+    height: 2px;
+    background: linear-gradient(90deg, #ff6347, #ff4500); /* Gradient underline */
+    border-radius: 2px;
+    transition: width 0.4s ease;
+}
+
+.navbar-menu a:hover::after {
+    width: 100%; /* Full underline on hover */
+}
+
+.navbar-menu a:hover {
+    color: #ff4500; /* Gradient-inspired accent */
+}
+
+.navbar-menu .active {
+    color: #ff3c00; /* Active page highlight */
+    font-weight: 700;
+}
+
+/* Right Section */
+.navbar-right {
     display: flex;
     align-items: center;
-    gap: 40px;
+    gap: 25px;
 }
 
-.navbar button{
-    background: transparent;
-    font-size: 16px;
-    color: #49557e;
-    border: 1px solid tomato;
-    padding: 10px 30px;
-    border-radius: 50px;
+.navbar button {
+    background: tomato;
+    color: white;
+    font-size: 15px;
+    padding: 8px 22px;
+    border: none;
+    border-radius: 30px;
     cursor: pointer;
-    transform: 0.3s;
-}
-.navbar button:hover{
-    background-color: #fff4f2;
+    transition: 0.3s;
+    box-shadow: 0 2px 6px rgba(255,99,71,0.4);
 }
 
-.navbar .active{
-    padding-bottom: 2px;
-    border-bottom: 2px solid #49557e;
-    
-}
-.navbar li{
-    cursor: pointer;
+.navbar button:hover {
+    background: #e14c3d;
 }
 
-.navbar-search-icon{
-    position: relative;
-
-}
-.navbar-search-icon .dot{
-    position: absolute;
-    min-width: 10px;
-    min-height: 10px;
-    background-color: tomato;
-    border-radius: 5px;
-    top: -8px;
-    left: 9.5px;
-}
-@media (max-width:1050px){
-    .navbar .logo{
-        width: 140px;
-    }
-    .navbar-menu{
-        gap: 20px;
-        font-size: 17px;
-
-    }
-    .navbar-right{
-        gap: 30px;
-
-    }
-    .navbar-right img{
-        width: 22px;
-    }
-    .navbar-right button{
-        padding: 8px 25px;
-    }
-}
-@media (max-width:900px){
-    .navbar .logo{
-        width: 120px;
-    }
-    .navbar-menu{
-        gap: 15px;
-        font-size: 16px;
-
-    }
-    .navbar-right{
-        gap: 20px;
-
-    }
-    .navbar-right img{
-        width: 20px;
-    }
-    .navbar-right button{
-        padding: 7px 20px;
-        font-size: 15px;
-    }
-}
-
-.navbar-profile{
+/* Profile dropdown */
+.navbar-profile {
     position: relative;
     cursor: pointer;
-
 }
-.nav-profile-dropdown{
+.nav-profile-dropdown {
     position: absolute;
     display: none;
     right: 0;
-    z-index: 1;
+    top: 40px;
+    background: #fff;
+    padding: 12px 18px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    list-style: none;
 }
-.navbar-profile:hover .nav-profile-dropdown{
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        background-color: #fff2ef;
-        padding: 12px 25px;
-        border-radius: 4px;
-        border: 1px solid tomato;
-        outline: 2px solid white;
-        list-style: none;
+.navbar-profile:hover .nav-profile-dropdown {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
-.nav-profile-dropdown li{
+.nav-profile-dropdown li {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
     cursor: pointer;
+    font-size: 15px;
 }
-.nav-profile-dropdown img{
-    width: 20px;
-}
-.nav-profile-dropdown li:hover{
+.nav-profile-dropdown li:hover {
     color: tomato;
 }
-@media (max-width:750px){
-    
-    .navbar-menu{
-       display: none;
 
-    }
-    
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    cursor: pointer;
+}
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: #333;
+    border-radius: 3px;
 }
 
+/* Responsive */
+@media (max-width: 900px) {
+    .navbar-menu {
+        display: none;
+    }
+
+    .navbar {
+        padding: 15px 20px;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .navbar.open .navbar-menu {
+        display: flex;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        flex-direction: column;
+        width: 100%;
+        background: white;
+        padding: 15px 0;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+}

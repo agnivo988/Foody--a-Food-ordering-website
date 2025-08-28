@@ -1,35 +1,111 @@
 .place-order{
     display: flex;
-    align-items: start;
-    justify-content: space-between;
-    gap: 50px;
+    gap: 40px;
     margin-top: 100px;
+    flex-wrap: wrap;
+    font-family: 'Poppins', sans-serif;
 }
+
+/* Left: Delivery Info */
 .place-order-left{
-    width: 100%;
-    max-width: max(30%,500px);
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+    background: #fff;
+    padding: 25px 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
 }
+
 .place-order-left .title{
-    font-size: 30px;
-    font-weight: 600;
-    margin-bottom: 50px;
+    font-size: 28px;
+    font-weight: 700;
+    color: #ff4500;
+    margin-bottom: 30px;
 }
+
 .place-order-left input{
     margin-bottom: 15px;
     width: 100%;
-    padding: 10px;
-    border: 1px solid #c5c5c5;
-    border-radius: 4px;
-    outline-color: tomato;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    transition: all 0.3s ease;
 }
+
+.place-order-left input:focus{
+    border-color: #ff6347;
+    box-shadow: 0 0 8px rgba(255,69,0,0.3);
+}
+
 .place-order-left .multi-fields{
     display: flex;
     gap: 10px;
 }
+
+/* Right: Cart Totals */
 .place-order-right{
-    width: 100%;
-    max-width: max(40%,500px);
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
 }
-.place-order .cart-total button{
-    margin-top: 30px;
+
+.cart-total{
+    background: #fff;
+    padding: 25px 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+.cart-total h2{
+    margin-bottom: 20px;
+    color: #222;
+}
+
+.cart-total-details{
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.cart-total-details.total b{
+    font-size: 18px;
+    color: #222;
+}
+
+.cart-total hr{
+    margin: 10px 0;
+    border: none;
+    height: 1px;
+    background-color: #e2e2e2;
+}
+
+.cart-total button{
+    width: 100%;
+    margin-top: 25px;
+    padding: 12px 0;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 30px;
+    border: none;
+    background: linear-gradient(135deg, #ff6347, #ff4500);
+    color: white;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 12px rgba(255,69,0,0.4);
+}
+
+.cart-total button:hover{
+    transform: scale(1.03);
+    box-shadow: 0 6px 18px rgba(255,69,0,0.6);
+}
+
+/* Responsive */
+@media(max-width:900px){
+    .place-order{
+        flex-direction: column;
+    }
 }
