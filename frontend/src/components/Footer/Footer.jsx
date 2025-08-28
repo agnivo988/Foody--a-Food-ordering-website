@@ -4,41 +4,71 @@ import { assets } from '../../assets/assets'
 
 const Footer = () => {
   return (
-    <div className='footer' id='footer'>
-        <div className="footer-content">
-            <div className="footer-content-left">
-              <img src={assets.logo} alt="" width="150px" height="120px" />
-              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa perferendis provident nulla molestiae sapiente dolorum aut, quisquam enim saepe illo?</p>
-              <div className="footer-social-icons">
-                <img src={assets.facebook_icon} alt="" />
-                <img src={assets.linkedin_icon} alt="" />
-                <img src={assets.twitter_icon} alt="" />
-              </div>
-            </div>
-            <div className="footer-content-center">
-                <h2>COMPANY</h2>
-                <ul>
-                    <li>Home</li>
-                    <li>About</li>
-                    <li>Delivery</li>
-                    <li>Privacy Policy</li>
-                </ul>
-
-            </div>
-            <div className="footer-content-right">
-                    <h2>GET IN TOUCH</h2>
-                    <ul>
-                        <li>+1-2314-242525</li>
-                        <li>contact@foodie.com</li>
-                    </ul>
-            </div>
+    <footer className='footer' id='footer'>
+      <div className="footer-content">
+        
+        {/* Left Section */}
+        <div className="footer-content-left">
+          <img src={assets.logo} alt="Foody Logo" className="footer-logo" />
+          <h1 className="footer-tagline">
+            Delicious food delivered to your doorstep. Experience taste, quality,
+            and convenience with <strong>Foody</strong>.
+          </h1>
+          
+          
         </div>
+
+        {/* Center Section */}
+        <div className="footer-content-center">
+          <h2>ABOUT FOODY</h2>
+          <ul>
+            <li><a href="#">Who We Are</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Work With Us</a></li>
+            <li><a href="#">Press Kit</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </div>
+
+        {/* Right Section */}
+        <div className="footer-content-center">
+          <h2>LEARN MORE</h2>
+          <ul>
+            <li><a href="#">Privacy</a></li>
+            <li><a href="#">Security</a></li>
+            <li><a href="#">Terms and Conditions</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+        
+        {/* Extra Section - App Download */}
+        <div className="footer-content-right">
+          <h2>GET IN TOUCH</h2>
+          <ul>
+            <li><a href="tel:+12314242525">+1-2314-242525</a></li>
+            <li><a href="mailto:contact@foodie.com">contact@foodie.com</a></li>
+          </ul>
+
+          <div className="footer-social-icons">
+            <a href="#"><img src={assets.facebook_icon} alt="Facebook" /></a>
+            <a href="#"><img src={assets.linkedin_icon} alt="LinkedIn" /></a>
+            <a href="#"><img src={assets.twitter_icon} alt="Twitter" /></a>
+          </div>
+        </div>
+        
+        </div>
+        
         <hr />
-        <p className='footer-copyright'>
-            Copyright 2025 Agniva Mukherjee &copy; Foody...
-                     Made with love in India
-        </p>
-    </div>
+
+      <p className="footer-copyright">
+        By continuing past this page, you agree to our{" "}
+        <a href="#">Terms of Service</a>, <a href="#">Cookie Policy</a>,{" "}
+        <a href="#">Privacy Policy</a> and <a href="#">Content Policies</a>. <br />
+        All trademarks are properties of their respective owners. <br />
+        2008-2025 © <strong>Foody™ Ltd.</strong> All rights reserved. <br />
+        Made with ❤️ in India.
+      </p>
+    </footer>
   )
 }
 
