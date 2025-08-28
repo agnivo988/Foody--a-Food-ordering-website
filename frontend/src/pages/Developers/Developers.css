@@ -1,0 +1,73 @@
+.developers-page {
+  padding: 60px 20px;
+  text-align: center;
+  min-height: 100vh;
+   background: url("/dev.jpg") no-repeat center center;
+  background-size: cover;   /* Make it cover full screen */
+  background-attachment: fixed; /* Parallax effect */
+  background-blend-mode: overlay; /* Blend with color */
+  background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+  color: white;
+}
+
+.developers-page h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.developers-page p {
+  color: #ffffff;
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+}
+
+.dev-team {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.dev-card {
+  background: transparent;
+  padding: 20px;
+  border-radius: 16px;
+  width: 250px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.dev-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.dev-img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  border: 3px solid #eee;
+  transition: 0.3s;
+}
+
+.dev-card:hover .dev-img {
+  border-color: #ff6347; /* highlight on hover */
+}
+
+.dev-card h2 {
+  font-size: 1.2rem;
+  margin: 10px 0 5px;
+  color: #ffffff;
+}
+
+.dev-card p {
+  font-size: 0.95rem;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+}
+
