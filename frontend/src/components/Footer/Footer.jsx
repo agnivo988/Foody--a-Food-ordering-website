@@ -60,14 +60,14 @@ const Footer = () => {
         
         <hr />
 
-      <p className="footer-copyright">
+      <h6 className="footer-copyright">
         By continuing past this page, you agree to our{" "}
         <a href="#">Terms of Service</a>, <a href="#">Cookie Policy</a>,{" "}
-        <a href="#">Privacy Policy</a> and <a href="#">Content Policies</a>. <br />
-        All trademarks are properties of their respective owners. <br />
-        2008-2025 © <strong>Foody™ Ltd.</strong> All rights reserved. <br />
-        Made with ❤️ in India.
-      </p>
+        <a href="#">Privacy Policy</a> and <a href="#">Content Policies</a>.
+        All trademarks are properties of their respective owners.
+        2008-2025 © <strong>Foody™ Ltd.</strong> All rights reserved.
+        Made with Love in India.
+      </h6>
     </footer>
   )
 }
