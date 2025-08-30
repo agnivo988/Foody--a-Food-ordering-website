@@ -6,7 +6,7 @@ import axios from "axios";
 
 const Placeorder = () => {
   const { getTotalCartAmount, token, food_list, cartItems } = useContext(StoreContext);
-  const url = "https://foody-backend-bua3.onrender.com";
+  const url = "https://foody-a-food-ordering-website.onrender.com";
   
   const [data, setData] = useState({
     firstName:"", lastName:"", email:"", street:"", city:"", state:"", zipcode:"", country:"", phone:""
