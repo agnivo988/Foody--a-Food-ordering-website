@@ -5,7 +5,7 @@ export const StoreContext = createContext(null);
 
 const StoreContextProvider = (props) => {
   const [cartItems, setCartItems] = useState({});
-  const url = "https://foody-backend-bua3.onrender.com"
+  const url = "https://foody-a-food-ordering-website.onrender.com"
   const [token,setToken] = useState("");
   const [food_list,setFoodList] = useState([]);
   
