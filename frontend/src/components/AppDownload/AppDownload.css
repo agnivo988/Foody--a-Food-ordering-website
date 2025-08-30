@@ -1,9 +1,23 @@
+/* Add a styled brown hr */
+.section-divider {
+  border: none;
+  height: 3px;
+  width: 60%;
+  margin: 40px auto;
+  border-radius: 4px;
+  background: linear-gradient(to right, transparent, #8B4513, transparent); 
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1); /* subtle depth */
+  opacity: 0.8; /* slight transparency */
+}
+
+
+/* Your existing code */
 .app-download {
-    margin: 80px auto; /* Balanced spacing */
+    margin: 80px auto;
     text-align: center;
-    font-size: clamp(20px, 3vw, 32px); /* Responsive font */
+    font-size: clamp(20px, 3vw, 32px);
     font-weight: 600;
-    color: #222; /* Neutral dark text */
+    color: #222;
     line-height: 1.4;
 }
 
@@ -11,15 +25,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap; /* Wrap on smaller screens */
-    gap: 24px; /* Clean spacing */
+    flex-wrap: wrap;
+    gap: 24px;
     margin-top: 32px;
 }
 
 .app-download-platforms img {
-    width: clamp(120px, 18vw, 180px); /* Responsive scaling */
-    border-radius: 12px; /* Smooth edges */
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* Subtle shadow */
+    width: clamp(120px, 18vw, 180px);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
 }
