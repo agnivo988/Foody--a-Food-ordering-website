@@ -65,8 +65,8 @@ const Footer = () => {
         <a href="#">Terms of Service</a>, <a href="#">Cookie Policy</a>,{" "}
         <a href="#">Privacy Policy</a> and <a href="#">Content Policies</a>.
         All trademarks are properties of their respective owners.
-        2008-2025 © <strong>Foody™ Ltd.</strong> All rights reserved.
-        Made with Love in India.
+        2025 © <strong>Foody™ Ltd.</strong> All rights reserved.
+        Made with ❤️ by Team Foody.
       </h6>
     </footer>
   )
