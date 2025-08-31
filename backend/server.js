@@ -53,14 +53,46 @@ app.post("/api/contact", async (req, res) => {
       to: email,
       subject: "We received your query",
       html: `
-        <div style="font-family: Arial, sans-serif; padding: 20px; border-radius: 10px; background: #f9f9f9;">
-          <h2 style="color: #333;">Hi ${fullName},</h2>
-          <p>Thank you for reaching out to us. We’ve received your query and will get back to you soon.</p>
-          <p style="margin-top: 10px;"><b>Your message:</b></p>
-          <blockquote style="color: #555; border-left: 3px solid #007bff; padding-left: 10px;">${message}</blockquote>
-          <p style="margin-top: 20px;">Warm Regards,<br/><b>FOODY Team</b></p>
+    <div style="background:#f4f4f4; padding:30px; font-family: Arial, sans-serif;">
+      <div style="max-width:600px; margin:auto; background:white; border-radius:12px; overflow:hidden; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
+        
+        <!-- Header with Logo -->
+        <div style="text-align:center; padding:20px; background:#ff6f61;">
+          <img src="https://ibb.co/0VRGPgqj" alt="FOODY Logo" style="max-width:120px; border-radius:8px;" />
         </div>
-      `,
+
+        <!-- Body -->
+        <div style="padding:30px;">
+          <h2 style="color:#333;">Hi ${fullName},</h2>
+          <p style="font-size:16px; color:#555; line-height:1.6;">
+            Thank you for reaching out to us. We’ve received your query and our team will get back to you soon.
+          </p>
+
+          <p style="margin-top:15px; font-weight:bold; color:#333;">Your message:</p>
+          <blockquote style="color:#555; border-left:4px solid #ff6f61; padding-left:12px; margin:10px 0; font-style:italic;">
+            ${message}
+          </blockquote>
+
+          <p style="margin-top:25px; font-size:15px; color:#555;">
+            Warm Regards,<br/><b style="color:#ff6f61;">FOODY Team</b>
+          </p>
+
+          <!-- Button -->
+          <div style="text-align:center; margin-top:30px;">
+            <a href="https://foody-ruddy.vercel.app/" 
+               style="background:#ff6f61; color:white; text-decoration:none; padding:12px 24px; border-radius:6px; font-weight:bold; display:inline-block;">
+              Visit Our Website
+            </a>
+          </div>
+        </div>
+
+        <!-- Footer -->
+        <div style="text-align:center; padding:15px; background:#f9f9f9; font-size:12px; color:#888;">
+          © ${new Date().getFullYear()} FOODY. All rights reserved.
+        </div>
+      </div>
+    </div>
+  `,
     });
 
     res.status(200).json({ success: true, message: "Emails sent successfully" });
