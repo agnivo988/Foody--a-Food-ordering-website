@@ -41,7 +41,11 @@ app.post("/api/contact", async (req, res) => {
   try {
     const transporter = nodemailer.createTransport({
       service: "gmail",
+      secure : true,
+      host: 'smtp.gmail.com',
+      port : 587,
       auth: {
+        
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS,
       },
@@ -58,7 +62,7 @@ app.post("/api/contact", async (req, res) => {
         
         <!-- Header with Logo -->
         <div style="text-align:center; padding:20px; background:#ff6f61;">
-          <img src="https://ibb.co/0VRGPgqj" alt="FOODY Logo" style="max-width:120px; border-radius:8px;" />
+          <img src="https://i.postimg.cc/SQ8G0D0S/Screenshot-2025-08-31-135547.png" alt="FOODY Logo" style="max-width:120px; border-radius:8px;" />
         </div>
 
         <!-- Body -->
