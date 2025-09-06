@@ -10,17 +10,25 @@ import "./Developers.css"; // for styling
 const devs = [
   {
     name: "Agniva Mukherjee",
-    role: "Full stack Developer |React & Next.js,MongoDB,Express,Node.js",
+    role: "Frontend and Backend Developer |React & Next.js,MongoDB,Express,Node.js",
     img: '/agniva.jpg',
   },
   {
     name: "Suvam Chaterjee",
     role: "Frontend Developer | React.js, Html , Css",
+     img: '/suvam.jpg',
  
   },
   {
-    name: "John Smith",
-    role: "UI/UX Designer | Figma & Tailwind",
+    name: "Sk. Niser Parvej",
+    role: "UI/UX Designer | Figma & Canva",
+    img:'/niser.jpg',
+   
+  },
+  {
+    name: "Priyangshu Roy",
+    role: "Frontend developer | React & Tailwindcss",
+    img:'/priyansu.jpg',
    
   },
 ];
