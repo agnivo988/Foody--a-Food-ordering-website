@@ -9,7 +9,7 @@ import { ToastContainer } from 'react-toastify';
 const App = () => {
 
 
-   const url = "https://foody-backend-bua3.onrender.com"
+   const url = "https://foody-a-food-ordering-website.onrender.com"
 
   return (
     <div>
